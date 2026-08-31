@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "3ylabs — From AI curiosity to AI capability" },
+      { title: "3ylabs: From AI curiosity to AI capability" },
       {
         name: "description",
         content:
           "3ylabs helps organizations turn AI ambition into secure, scalable products and intelligent operations.",
       },
       { name: "author", content: "3ylabs" },
-      { property: "og:title", content: "3ylabs — From AI curiosity to AI capability" },
+      { property: "og:title", content: "3ylabs: From AI curiosity to AI capability" },
       {
         property: "og:description",
         content: "AI strategy, AI-native products and production operations.",

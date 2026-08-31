@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Book an AI Readiness Assessment | 3ylabs" },
       {
         property: "og:description",
-        content: "From AI curiosity to AI capability — start with an AI readiness assessment.",
+        content: "From AI curiosity to AI capability, start with an AI readiness assessment.",
       },
     ],
   }),

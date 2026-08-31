@@ -50,7 +50,7 @@ export const services: Service[] = [
       },
       {
         q: "Can you deliver the roadmap you recommend?",
-        a: "Yes. The same team advises, builds and runs — so there is no handover gap between strategy and production.",
+        a: "Yes. The same team advises, builds and runs, so there is no handover gap between strategy and production.",
       },
     ],
   },
@@ -62,7 +62,7 @@ export const services: Service[] = [
     problem:
       "Bolting a chat box onto an existing product does not make it AI-native. Teams need software designed around retrieval, reasoning, evaluation and human review from the first line of code.",
     offering:
-      "We design and build AI-first software end to end — from product definition and architecture through evaluation harnesses, guardrails and production release. Setu Systems is the living example of this capability.",
+      "We design and build AI-first software end to end, from product definition and architecture through evaluation harnesses, guardrails and production release. Setu Systems is the living example of this capability.",
     capabilities: [
       "Agentic applications and workflow automation",
       "Copilots and role-aware assistants",
@@ -105,7 +105,7 @@ export const services: Service[] = [
     problem:
       "Legal and immigration operations run on spreadsheets, shared inboxes and disconnected trackers. Deadlines depend on memory, and no one can see the true state of a matter without asking three people.",
     offering:
-      "Our deepest specialization. We replace the patchwork with connected portals for cases, intake, billing and evidence — then weave AI through the workflow with human review before anything reaches a client.",
+      "Our deepest specialization. We replace the patchwork with connected portals for cases, intake, billing and evidence, then weave AI through the workflow with human review before anything reaches a client.",
     capabilities: [
       "Case and matter management",
       "Client intake and ticketing with SLA targets",
@@ -132,7 +132,7 @@ export const services: Service[] = [
       },
       {
         q: "Does AI make decisions on matters?",
-        a: "No. AI organizes, drafts and surfaces — a person reviews and approves before anything reaches a client.",
+        a: "No. AI organizes, drafts and surfaces, a person reviews and approves before anything reaches a client.",
       },
       {
         q: "Can you migrate our existing spreadsheets?",
@@ -245,7 +245,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Will this replace our team?",
-        a: "No — that is the point of HEM. We remove the copy-paste work so your team spends its time on judgment.",
+        a: "No, that is the point of HEM. We remove the copy-paste work so your team spends its time on judgment.",
       },
       {
         q: "Can you automate without replacing our systems?",
@@ -257,11 +257,11 @@ export const services: Service[] = [
     slug: "managed-hosting",
     name: "Website Powering & Managed Hosting",
     kind: "extended",
-    tagline: "Design, build, hosting and care of client websites and portals — offered as an ongoing managed service.",
+    tagline: "Design, build, hosting and care of client websites and portals, offered as an ongoing managed service.",
     problem:
       "A website is launched, then slowly rots: no owner, no updates, no monitoring, and a security posture nobody has checked in a year.",
     offering:
-      "We design, build, host and care for your site or portal as a service — performance, security, content updates and uptime included.",
+      "We design, build, host and care for your site or portal as a service, performance, security, content updates and uptime included.",
     capabilities: [
       "Design and build of sites and portals",
       "Global CDN hosting and performance tuning",

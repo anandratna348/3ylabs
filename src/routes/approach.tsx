@@ -9,7 +9,7 @@ export const Route = createFileRoute("/approach")({
       {
         name: "description",
         content:
-          "Discover, Design, Build, Deploy and Optimize — how 3ylabs takes AI from opportunity map to production operations.",
+          "Discover, Design, Build, Deploy and Optimize, how 3ylabs takes AI from opportunity map to production operations.",
       },
       { property: "og:title", content: "Our Approach: From Opportunity to Production | 3ylabs" },
       {

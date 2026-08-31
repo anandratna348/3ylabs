@@ -47,7 +47,7 @@ export function DemoModal({
             <CheckCircle2 className="mx-auto h-10 w-10 text-[var(--cyan)]" aria-hidden />
             <h3 className="mt-4 text-lg font-semibold">Demo request received</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Thanks — we'll be in touch to arrange your walkthrough.
+              Thanks, we'll be in touch to arrange your walkthrough.
             </p>
             <button
               type="button"

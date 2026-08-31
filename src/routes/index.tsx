@@ -22,13 +22,13 @@ import { CTASection } from "@/components/CTASection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "3ylabs — From AI Curiosity to AI Capability" },
+      { title: "3ylabs: From AI Curiosity to AI Capability" },
       {
         name: "description",
         content:
-          "3ylabs helps organizations turn AI ambition into secure, scalable products and intelligent operations — from strategy through production.",
+          "3ylabs helps organizations turn AI ambition into secure, scalable products and intelligent operations, from strategy through production.",
       },
-      { property: "og:title", content: "3ylabs — From AI Curiosity to AI Capability" },
+      { property: "og:title", content: "3ylabs: From AI Curiosity to AI Capability" },
       {
         property: "og:description",
         content:
@@ -138,7 +138,7 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               3ylabs helps organizations turn AI ambition into secure, scalable products and
-              intelligent operations — from strategy through production.
+              intelligent operations, from strategy through production.
             </p>
             <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-[var(--brand-deep)]">
               We advise. We build. We run our own products.
@@ -233,13 +233,13 @@ function Home() {
             One intelligent platform. Every part of the operation.
           </h2>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground">
-            Setu means "bridge" in Sanskrit — the bridge between business functions, and between
+            Setu means "bridge" in Sanskrit, the bridge between business functions, and between
             people and intelligent systems. Setu Systems gives you a portal for every part of your
-            operation — cases, billing, client inquiries, evidence, and insight — with AI woven
+            operation, cases, billing, client inquiries, evidence, and insight, with AI woven
             through all of it.
           </p>
           <p className="mt-3 text-sm font-medium text-primary">
-            Start with one portal. Add the rest as you grow — with implementation and customization
+            Start with one portal. Add the rest as you grow, with implementation and customization
             from 3ylabs.
           </p>
 
@@ -272,7 +272,7 @@ function Home() {
               We run the operations behind an immigration case operations firm.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              3ylabs powers AscendHSI's operations end to end — Setu portals for case management,
+              3ylabs powers AscendHSI's operations end to end, Setu portals for case management,
               client ticketing and billing, AI in daily workflows with human review, and the cloud
               infrastructure underneath.
             </p>
@@ -377,7 +377,7 @@ function Home() {
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               We believe artificial intelligence should amplify human capability, accelerate
-              innovation and enable smarter decisions — not replace the people behind them.
+              innovation and enable smarter decisions, not replace the people behind them.
             </p>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
@@ -414,7 +414,7 @@ function Home() {
             <p className="mt-3 text-base leading-relaxed text-foreground">
               To help organizations identify the right AI opportunities, engineer practical
               solutions, modernize their platforms and continuously innovate through intelligent
-              automation — delivered by one accountable team from strategy through production.
+              automation, delivered by one accountable team from strategy through production.
             </p>
           </article>
         </div>

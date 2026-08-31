@@ -67,7 +67,7 @@ const warn = "bg-secondary text-muted-foreground";
 export function PortalMockup({ id }: { id: PortalId }) {
   if (id === "vantage")
     return (
-      <Chrome title="Setu Vantage — Case Workspace">
+      <Chrome title="Setu Vantage · Case Workspace">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           <Stat label="Active cases" value="128" />
           <Stat label="Open tasks" value="46" />
@@ -85,9 +85,9 @@ export function PortalMockup({ id }: { id: PortalId }) {
         <div className="mt-5">
           <p className="label-mono">Recent cases</p>
           <div className="mt-2">
-            <Row cells={["H-1B Transfer — Nexa", "Due in 3 days"]} badge={{ text: "IN REVIEW", tone: warn }} />
-            <Row cells={["Green Card — Patel", "Filed"]} badge={{ text: "ON TRACK", tone: ok }} />
-            <Row cells={["O-1 Petition — Lumen", "Evidence pending"]} badge={{ text: "ACTION", tone: warn }} />
+            <Row cells={["H-1B Transfer · Nexa", "Due in 3 days"]} badge={{ text: "IN REVIEW", tone: warn }} />
+            <Row cells={["Green Card · Patel", "Filed"]} badge={{ text: "ON TRACK", tone: ok }} />
+            <Row cells={["O-1 Petition · Lumen", "Evidence pending"]} badge={{ text: "ACTION", tone: warn }} />
           </div>
         </div>
       </Chrome>
@@ -95,9 +95,9 @@ export function PortalMockup({ id }: { id: PortalId }) {
 
   if (id === "finance")
     return (
-      <Chrome title="Setu Finance — Billing Overview">
+      <Chrome title="Setu Finance · Billing Overview">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <Stat label="Revenue MTD" value="—" />
+          <Stat label="Revenue MTD" value="n/a" />
           <Stat label="Invoices" value="86" />
           <Stat label="Outstanding" value="14" tone="cyan" />
           <Stat label="Payments" value="72" />
@@ -117,9 +117,9 @@ export function PortalMockup({ id }: { id: PortalId }) {
         <div className="mt-5">
           <p className="label-mono">Recent transactions</p>
           <div className="mt-2">
-            <Row cells={["INV-2041 — Nexa Corp", "Retainer"]} badge={{ text: "PAID", tone: ok }} />
-            <Row cells={["INV-2042 — Lumen Ltd", "Milestone"]} badge={{ text: "SENT", tone: warn }} />
-            <Row cells={["INV-2043 — Patel", "Hourly"]} badge={{ text: "OVERDUE", tone: warn }} />
+            <Row cells={["INV-2041 · Nexa Corp", "Retainer"]} badge={{ text: "PAID", tone: ok }} />
+            <Row cells={["INV-2042 · Lumen Ltd", "Milestone"]} badge={{ text: "SENT", tone: warn }} />
+            <Row cells={["INV-2043 · Patel", "Hourly"]} badge={{ text: "OVERDUE", tone: warn }} />
           </div>
         </div>
       </Chrome>
@@ -127,7 +127,7 @@ export function PortalMockup({ id }: { id: PortalId }) {
 
   if (id === "evidence")
     return (
-      <Chrome title="Setu Evidence Studio — Portfolio">
+      <Chrome title="Setu Evidence Studio · Portfolio">
         <div className="grid gap-4 sm:grid-cols-[1.1fr_1fr]">
           <div className="rounded-xl border border-border bg-background p-3">
             <p className="label-mono">Documents</p>
@@ -169,7 +169,7 @@ export function PortalMockup({ id }: { id: PortalId }) {
 
   if (id === "tickets")
     return (
-      <Chrome title="Setu Tickets — Client Inquiries">
+      <Chrome title="Setu Tickets · Client Inquiries">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           <Stat label="Open" value="37" />
           <Stat label="High priority" value="6" tone="cyan" />
@@ -190,7 +190,7 @@ export function PortalMockup({ id }: { id: PortalId }) {
 
   if (id === "discover")
     return (
-      <Chrome title="Setu Discover — AI Opportunity Map">
+      <Chrome title="Setu Discover · AI Opportunity Map">
         <div className="grid grid-cols-3 gap-3">
           <Stat label="Opportunities" value="12" />
           <Stat label="Quick wins" value="4" tone="cyan" />
@@ -224,7 +224,7 @@ export function PortalMockup({ id }: { id: PortalId }) {
     );
 
   return (
-    <Chrome title="Setu AI Assistant — Governed Answers">
+    <Chrome title="Setu AI Assistant · Governed Answers">
       <div className="rounded-xl border border-border bg-[var(--tint)] p-3">
         <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           User question

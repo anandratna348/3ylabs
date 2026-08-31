@@ -22,7 +22,7 @@ export const portals: Portal[] = [
     label: "Case & Matter Management",
     short: "Clients, teams, tasks and documents in one workspace.",
     description:
-      "Clients, teams, tasks, documents and status in one workspace — replacing spreadsheets and disconnected email trails.",
+      "Clients, teams, tasks, documents and status in one workspace, replacing spreadsheets and disconnected email trails.",
     benefits: [
       "One source of truth for every case",
       "Nothing falls through the cracks",
