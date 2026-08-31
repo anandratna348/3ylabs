@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useState } from "react";
 import { portals } from "@/data/setu";
 import { PortalExplorer } from "@/components/PortalExplorer";
@@ -30,6 +31,8 @@ function SetuPage() {
 
   return (
     <main>
+      <Breadcrumbs items={[{ label: "Products" }, { label: "Setu Systems" }]} />
+
       <section className="border-b border-border bg-[var(--gradient-tint)]">
         <div className="container-page py-16 sm:py-24">
           <p className="label-mono">Setu Systems</p>

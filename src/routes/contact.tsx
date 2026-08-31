@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
@@ -96,6 +97,8 @@ function ContactPage() {
 
   return (
     <main>
+      <Breadcrumbs items={[{ label: "Contact" }]} />
+
       <section className="border-b border-border bg-[var(--gradient-tint)]">
         <div className="container-page py-16 sm:py-24">
           <p className="label-mono">Contact</p>

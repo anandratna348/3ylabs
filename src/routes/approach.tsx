@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useState } from "react";
 import { CTASection } from "@/components/CTASection";
 
@@ -60,6 +61,8 @@ function ApproachPage() {
 
   return (
     <main>
+      <Breadcrumbs items={[{ label: "Company" }, { label: "Approach" }]} />
+
       <section className="border-b border-border bg-[var(--gradient-tint)]">
         <div className="container-page py-16 sm:py-24">
           <p className="label-mono">Approach</p>

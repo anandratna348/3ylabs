@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Database, GitBranch, Rocket } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 
@@ -42,6 +43,8 @@ const outcomes = [
 function ResultsPage() {
   return (
     <main>
+      <Breadcrumbs items={[{ label: "Company" }, { label: "Results" }]} />
+
       <section className="border-b border-border bg-[var(--gradient-tint)]">
         <div className="container-page py-16 sm:py-24">
           <p className="label-mono">Results</p>
