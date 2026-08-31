@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as ProductsSetuSystemsRouteImport } from './routes/products.setu-systems'
@@ -43,6 +44,11 @@ const ContactRoute = ContactRouteImport.update({
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/insights': typeof InsightsRoute
   '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/products/setu-systems': typeof ProductsSetuSystemsRoute
@@ -89,6 +96,7 @@ export interface FileRoutesByTo {
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/insights': typeof InsightsRoute
   '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/products/setu-systems': typeof ProductsSetuSystemsRoute
@@ -102,6 +110,7 @@ export interface FileRoutesById {
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/insights': typeof InsightsRoute
   '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/products/setu-systems': typeof ProductsSetuSystemsRoute
@@ -116,6 +125,7 @@ export interface FileRouteTypes {
     | '/approach'
     | '/contact'
     | '/industries'
+    | '/insights'
     | '/privacy'
     | '/results'
     | '/products/setu-systems'
@@ -128,6 +138,7 @@ export interface FileRouteTypes {
     | '/approach'
     | '/contact'
     | '/industries'
+    | '/insights'
     | '/privacy'
     | '/results'
     | '/products/setu-systems'
@@ -140,6 +151,7 @@ export interface FileRouteTypes {
     | '/approach'
     | '/contact'
     | '/industries'
+    | '/insights'
     | '/privacy'
     | '/results'
     | '/products/setu-systems'
@@ -153,6 +165,7 @@ export interface RootRouteChildren {
   ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  InsightsRoute: typeof InsightsRoute
   PrivacyRoute: typeof PrivacyRoute
   ResultsRoute: typeof ResultsRoute
   ProductsSetuSystemsRoute: typeof ProductsSetuSystemsRoute
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -241,6 +261,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  InsightsRoute: InsightsRoute,
   PrivacyRoute: PrivacyRoute,
   ResultsRoute: ResultsRoute,
   ProductsSetuSystemsRoute: ProductsSetuSystemsRoute,
