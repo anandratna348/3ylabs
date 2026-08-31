@@ -233,10 +233,10 @@ function Home() {
             One intelligent platform. Every part of the operation.
           </h2>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground">
-            Setu means "bridge" in Sanskrit, the bridge between business functions, and between
+            Setu means "bridge" in Sanskrit: the bridge between business functions, and between
             people and intelligent systems. Setu Systems gives you a portal for every part of your
-            operation, cases, billing, client inquiries, evidence, and insight, with AI woven
-            through all of it.
+            operation: cases, billing, client inquiries,
+            evidence and insight, all with AI woven through.
           </p>
           <p className="mt-3 text-sm font-medium text-primary">
             Start with one portal. Add the rest as you grow, with implementation and customization
@@ -272,7 +272,7 @@ function Home() {
               We run the operations behind an immigration case operations firm.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              3ylabs powers AscendHSI's operations end to end, Setu portals for case management,
+              3ylabs powers AscendHSI's operations end to end with Setu portals for case management,
               client ticketing and billing, AI in daily workflows with human review, and the cloud
               infrastructure underneath.
             </p>

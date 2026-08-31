@@ -13,7 +13,7 @@ export const Route = createFileRoute("/products/setu-systems")({
       {
         name: "description",
         content:
-          "Setu Systems gives you a portal for every part of your operation, cases, billing, client inquiries, evidence and insight, with AI woven through all of it.",
+          "Setu Systems gives you a portal for every part of your operation: cases, billing, client inquiries, evidence and insight, all with AI woven through.",
       },
       { property: "og:title", content: "Setu Systems: One Intelligent Platform | 3ylabs" },
       {
@@ -37,11 +37,11 @@ function SetuPage() {
             Run your firm on one <span className="text-gradient-brand">intelligent platform.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Setu Systems gives you a portal for every part of your operation, cases, billing,
-            client inquiries, evidence, and insight, with AI woven through all of it.
+            Setu Systems gives you a portal for every part of your operation: cases, billing,
+            client inquiries, evidence and insight, all with AI woven through.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Setu means "bridge" in Sanskrit, the bridge between business functions, and between
+            Setu means "bridge" in Sanskrit: the bridge between business functions, and between
             people and intelligent systems. Built by the team at 3ylabs, proven in production with
             real legal-tech operations, and ready for any business that runs on documents,
             deadlines and trust.
