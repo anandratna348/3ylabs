@@ -98,14 +98,22 @@ function ServiceDetail() {
       <section className="container-page py-14 sm:py-20">
         <Reveal>
           <p className="label-mono">Engagement models</p>
-          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
-            {service.engagement.map((e) => (
-              <div key={e.name} className="bg-card p-6 transition-colors hover:bg-[var(--tint)]">
-                <h3 className="font-display text-base font-semibold">{e.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.detail}</p>
-              </div>
+          <ol className="mt-6 divide-y divide-border border-t border-border">
+            {service.engagement.map((e, i) => (
+              <li
+                key={e.name}
+                className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8"
+              >
+                <span className="font-mono text-xs tracking-widest text-[var(--brand)] sm:w-10">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-display text-base font-semibold text-foreground sm:w-52">
+                  {e.name}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground sm:flex-1">{e.detail}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </Reveal>
 
         <Reveal className="mt-14">
