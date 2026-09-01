@@ -283,9 +283,10 @@ export function Navbar() {
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}
-                className="block cursor-pointer rounded-lg px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
+                className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-3 text-center text-sm font-semibold text-primary-foreground transition-all hover:brightness-105"
               >
                 Book an AI Readiness Assessment
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
               </Link>
             </li>
           </ul>
