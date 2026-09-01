@@ -79,8 +79,8 @@
   --chart-4: oklch(0.78 0.13 72);
   --chart-5: oklch(0.52 0.09 264);
 
-  --gradient-brand: linear-gradient(120deg, var(--brand-deep) 0%, var(--brand) 60%, oklch(0.48 0.11 262) 100%);
-  --gradient-accent: linear-gradient(120deg, oklch(0.68 0.13 58) 0%, var(--cyan) 50%, oklch(0.55 0.13 40) 100%);
+  --gradient-brand: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 50%, oklch(0.30 0.10 264) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 45%, oklch(0.58 0.13 52) 100%);
   --gradient-tint: linear-gradient(180deg, oklch(1 0 0) 0%, var(--tint) 100%);
   --shadow-soft: 0 1px 2px oklch(0.19 0.004 265 / 0.05), 0 8px 24px -12px oklch(0.245 0.072 265 / 0.18);
   --shadow-lift: 0 2px 4px oklch(0.19 0.004 265 / 0.05), 0 24px 48px -20px oklch(0.245 0.072 265 / 0.24);
