@@ -20,7 +20,8 @@ export function CTASection() {
         </p>
         <Link
           to="/contact"
-          className="mt-8 inline-flex rounded-lg bg-background px-6 py-3.5 text-sm font-semibold text-primary shadow-[var(--shadow-lift)] transition-transform hover:-translate-y-0.5"
+          style={{ background: "var(--gradient-accent)" }}
+          className="mt-8 inline-flex cursor-pointer rounded-lg px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-transform hover:-translate-y-0.5"
         >
           Book an AI Readiness Assessment
         </Link>
