@@ -212,9 +212,10 @@ export function Navbar() {
           <Link
             to="/contact"
             style={{ background: "var(--gradient-accent)" }}
-            className="inline-flex cursor-pointer items-center rounded-lg px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] hover:brightness-105"
           >
             Book an Assessment
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />
           </Link>
         </div>
 
