@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "./Wordmark";
 import { services } from "@/data/services";
@@ -212,9 +212,10 @@ export function Navbar() {
           <Link
             to="/contact"
             style={{ background: "var(--gradient-accent)" }}
-            className="inline-flex cursor-pointer items-center rounded-lg px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] hover:brightness-105"
           >
             Book an Assessment
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />
           </Link>
         </div>
 
@@ -282,9 +283,10 @@ export function Navbar() {
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}
-                className="block cursor-pointer rounded-lg px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
+                className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-3 text-center text-sm font-semibold text-primary-foreground transition-all hover:brightness-105"
               >
                 Book an AI Readiness Assessment
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
               </Link>
             </li>
           </ul>

@@ -140,7 +140,8 @@ function ContactPage() {
               <button
                 type="submit"
                 disabled={state === "loading"}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:opacity-70"
+                style={{ background: "var(--gradient-accent)" }}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:brightness-105 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:brightness-100"
               >
                 {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
                 Book an AI Readiness Assessment

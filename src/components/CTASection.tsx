@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -21,9 +22,10 @@ export function CTASection() {
         <Link
           to="/contact"
           style={{ background: "var(--gradient-accent)" }}
-          className="mt-8 inline-flex cursor-pointer rounded-lg px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-transform hover:-translate-y-0.5"
+          className="group mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-lift)] transition-all hover:-translate-y-0.5 hover:brightness-105"
         >
           Book an AI Readiness Assessment
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
         </Link>
       </div>
     </section>
