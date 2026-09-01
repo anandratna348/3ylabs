@@ -211,7 +211,8 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="inline-flex cursor-pointer items-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+            style={{ background: "var(--gradient-accent)" }}
+            className="inline-flex cursor-pointer items-center rounded-lg px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
           >
             Book an Assessment
           </Link>
@@ -280,7 +281,8 @@ export function Navbar() {
             <li className="mt-3">
               <Link
                 to="/contact"
-                className="block cursor-pointer rounded-lg bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
+                style={{ background: "var(--gradient-accent)" }}
+                className="block cursor-pointer rounded-lg px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
               >
                 Book an AI Readiness Assessment
               </Link>
