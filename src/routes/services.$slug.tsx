@@ -22,6 +22,12 @@ export const Route = createFileRoute("/services/$slug")({
         { name: "description", content: service.tagline },
         { property: "og:title", content: `${service.name} | 3ylabs` },
         { property: "og:description", content: service.tagline },
+        { property: "og:url", content: `https://lovable-site-link.lovable.app/services/${service.slug}` },
+        { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+        { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      ],
+      links: [
+        { rel: "canonical", href: `https://lovable-site-link.lovable.app/services/${service.slug}` },
       ],
     };
   },
