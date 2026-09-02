@@ -19,7 +19,11 @@ export const Route = createFileRoute("/services/")({
         property: "og:description",
         content: "AI strategy, product engineering, legal-tech and platform delivery from one accountable team.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/services" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/services" }],
   }),
   component: ServicesHub,
 });

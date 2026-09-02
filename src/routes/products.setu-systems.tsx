@@ -21,7 +21,11 @@ export const Route = createFileRoute("/products/setu-systems")({
         property: "og:description",
         content: "Start with one portal and add the rest as you grow.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/products/setu-systems" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/products/setu-systems" }],
   }),
   component: SetuPage,
 });

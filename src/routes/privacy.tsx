@@ -11,7 +11,11 @@ export const Route = createFileRoute("/privacy")({
       },
       { property: "og:title", content: "Privacy | 3ylabs" },
       { property: "og:description", content: "How 3ylabs handles your information." },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/privacy" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/privacy" }],
   }),
   component: Privacy,
 });

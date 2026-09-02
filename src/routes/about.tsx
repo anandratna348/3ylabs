@@ -20,7 +20,11 @@ export const Route = createFileRoute("/about")({
         content:
           "Who we are, how we work and why we run our own products alongside client platforms.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/about" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/about" }],
   }),
   component: AboutPage,
 });

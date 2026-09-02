@@ -20,7 +20,11 @@ export const Route = createFileRoute("/industries")({
         property: "og:description",
         content: "Legal first, then healthcare, insurance, financial services, manufacturing and professional services.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/industries" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/industries" }],
   }),
   component: Industries,
 });

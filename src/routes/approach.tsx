@@ -17,7 +17,11 @@ export const Route = createFileRoute("/approach")({
         property: "og:description",
         content: "The five-stage 3ylabs delivery model for AI-native products and operations.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/approach" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/approach" }],
   }),
   component: ApproachPage,
 });

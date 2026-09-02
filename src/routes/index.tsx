@@ -34,7 +34,11 @@ export const Route = createFileRoute("/")({
         content:
           "AI transformation services, AI-native product engineering, legal-tech solutions and cloud delivery.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/" }],
   }),
   component: Home,
 });
