@@ -17,7 +17,11 @@ export const Route = createFileRoute("/results")({
         property: "og:description",
         content: "AscendHSI runs case management, client ticketing and billing on Setu portals.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/results" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/results" }],
   }),
   component: ResultsPage,
 });

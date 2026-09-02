@@ -25,7 +25,11 @@ export const Route = createFileRoute("/insights")({
         property: "og:description",
         content: "Field notes on AI readiness, agent design and production operations.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/insights" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/insights" }],
   }),
   component: InsightsPage,
 });

@@ -17,7 +17,11 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "From AI curiosity to AI capability, start with an AI readiness assessment.",
       },
+      { property: "og:url", content: "https://lovable-site-link.lovable.app/contact" },
+      { property: "og:image", content: "https://lovable-site-link.lovable.app/og.png" },
+      { name: "twitter:image", content: "https://lovable-site-link.lovable.app/og.png" },
     ],
+    links: [{ rel: "canonical", href: "https://lovable-site-link.lovable.app/contact" }],
   }),
   component: ContactPage,
 });
