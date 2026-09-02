@@ -21,6 +21,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProductsSetuSystemsRouteImport } from './routes/products.setu-systems'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ProductsSetuSystemsPortalRouteImport } from './routes/products.setu-systems.$portal'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,6 +83,12 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsSetuSystemsPortalRoute =
+  ProductsSetuSystemsPortalRouteImport.update({
+    id: '/$portal',
+    path: '/$portal',
+    getParentRoute: () => ProductsSetuSystemsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -93,9 +100,10 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/products/setu-systems': typeof ProductsSetuSystemsRoute
+  '/products/setu-systems': typeof ProductsSetuSystemsRouteWithChildren
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
+  '/products/setu-systems/$portal': typeof ProductsSetuSystemsPortalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -107,9 +115,10 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/products/setu-systems': typeof ProductsSetuSystemsRoute
+  '/products/setu-systems': typeof ProductsSetuSystemsRouteWithChildren
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
+  '/products/setu-systems/$portal': typeof ProductsSetuSystemsPortalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -122,9 +131,10 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/products/setu-systems': typeof ProductsSetuSystemsRoute
+  '/products/setu-systems': typeof ProductsSetuSystemsRouteWithChildren
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
+  '/products/setu-systems/$portal': typeof ProductsSetuSystemsPortalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/products/setu-systems'
     | '/services/$slug'
     | '/services/'
+    | '/products/setu-systems/$portal'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +166,7 @@ export interface FileRouteTypes {
     | '/products/setu-systems'
     | '/services/$slug'
     | '/services'
+    | '/products/setu-systems/$portal'
   id:
     | '__root__'
     | '/'
@@ -169,6 +181,7 @@ export interface FileRouteTypes {
     | '/products/setu-systems'
     | '/services/$slug'
     | '/services/'
+    | '/products/setu-systems/$portal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -181,7 +194,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   ResultsRoute: typeof ResultsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  ProductsSetuSystemsRoute: typeof ProductsSetuSystemsRoute
+  ProductsSetuSystemsRoute: typeof ProductsSetuSystemsRouteWithChildren
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -272,8 +285,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/setu-systems/$portal': {
+      id: '/products/setu-systems/$portal'
+      path: '/$portal'
+      fullPath: '/products/setu-systems/$portal'
+      preLoaderRoute: typeof ProductsSetuSystemsPortalRouteImport
+      parentRoute: typeof ProductsSetuSystemsRoute
+    }
   }
 }
+
+interface ProductsSetuSystemsRouteChildren {
+  ProductsSetuSystemsPortalRoute: typeof ProductsSetuSystemsPortalRoute
+}
+
+const ProductsSetuSystemsRouteChildren: ProductsSetuSystemsRouteChildren = {
+  ProductsSetuSystemsPortalRoute: ProductsSetuSystemsPortalRoute,
+}
+
+const ProductsSetuSystemsRouteWithChildren =
+  ProductsSetuSystemsRoute._addFileChildren(ProductsSetuSystemsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -285,7 +316,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   ResultsRoute: ResultsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  ProductsSetuSystemsRoute: ProductsSetuSystemsRoute,
+  ProductsSetuSystemsRoute: ProductsSetuSystemsRouteWithChildren,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
