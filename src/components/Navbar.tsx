@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Wordmark } from "./Wordmark";
+import { ThemeToggle } from "./ThemeToggle";
 import { services } from "@/data/services";
 import { portals } from "@/data/setu";
 
@@ -208,7 +209,8 @@ export function Navbar() {
           })}
         </ul>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle compact />
           <Link
             to="/contact"
             style={{ background: "var(--gradient-accent)" }}
@@ -219,6 +221,8 @@ export function Navbar() {
           </Link>
         </div>
 
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle compact />
         <button
           type="button"
           className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border text-primary lg:hidden"
@@ -228,6 +232,7 @@ export function Navbar() {
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
+        </div>
       </nav>
 
       {open && (
