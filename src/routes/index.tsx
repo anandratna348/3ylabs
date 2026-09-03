@@ -18,6 +18,9 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { PortalExplorer } from "@/components/PortalExplorer";
 import { SetuArchitecture } from "@/components/SetuArchitecture";
 import { CTASection } from "@/components/CTASection";
+import vantageUi from "@/assets/setu-vantage-ui.jpg";
+import legalIndustry from "@/assets/legal-industry.jpg";
+import teamAbout from "@/assets/team-about.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -132,7 +135,7 @@ function Home() {
     <main>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-[var(--gradient-tint)]">
-        <div className="container-page grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-2">
+        <div className="container-page grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-2">
           <div className="animate-fade-up">
             <p className="label-mono">
               AI Transformation • AI-Native Products • Production
@@ -146,6 +149,10 @@ function Home() {
             </p>
             <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-[var(--brand-deep)]">
               We advise. We build. We run our own products.
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              3ylabs is the studio, Setu Systems is the software platform we build and sell, and
+              AscendHSI is the client whose operations run on it every day.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -172,7 +179,7 @@ function Home() {
       </section>
 
       {/* ADVISE BUILD RUN */}
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-12 sm:py-16">
         <div className="grid overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)] md:grid-cols-3">
           {abr.map((c, i) => (
             <div
@@ -196,7 +203,7 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="container-page scroll-mt-20 py-16 sm:py-20">
+      <section id="services" className="container-page scroll-mt-20 py-12 sm:py-16">
         <p className="label-mono">Services</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           Where AI becomes operational.
@@ -231,7 +238,7 @@ function Home() {
 
 
       {/* SETU */}
-      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-16 sm:py-24">
+      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-14 sm:py-20">
         <div className="container-page">
           <p className="label-mono">Setu Systems</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-bold sm:text-4xl">
@@ -248,6 +255,17 @@ function Home() {
             from 3ylabs.
           </p>
 
+
+          <figure className="mt-10 overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-lift)]">
+            <img
+              src={vantageUi}
+              alt="Setu Vantage case workspace showing a case list, statuses and an activity timeline"
+              width={1600}
+              height={1008}
+              loading="lazy"
+              className="block w-full"
+            />
+          </figure>
 
           <div className="mt-12">
             <PortalExplorer />
@@ -269,7 +287,7 @@ function Home() {
       </section>
 
       {/* ASCENDHSI PROOF STRIP */}
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-12 sm:py-16">
         <div className="surface-card grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <p className="label-mono">Proof in production · AscendHSI</p>
@@ -306,7 +324,7 @@ function Home() {
       </section>
 
       {/* APPROACH PREVIEW */}
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-12 sm:py-16">
         <p className="label-mono">Approach</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           One accountable team, from strategy through production.
@@ -332,17 +350,45 @@ function Home() {
         >
           Explore the full approach <ArrowRight className="h-4 w-4" aria-hidden />
         </Link>
+
+        <div className="mt-14 border-t border-border pt-10">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <p className="label-mono">Insights</p>
+            <Link
+              to="/insights"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--brand)] hover:underline"
+            >
+              All insights <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+          <ul className="mt-5 divide-y divide-border">
+            {insights.map((a) => (
+              <li key={a.title} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6">
+                <span className="label-mono sm:w-56 sm:shrink-0">{a.category}</span>
+                <span className="font-display text-base font-semibold">{a.title}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
 
 
       {/* INDUSTRIES */}
-      <section id="industries" className="container-page scroll-mt-20 py-16 sm:py-24">
+      <section id="industries" className="container-page scroll-mt-20 py-14 sm:py-20">
         <p className="label-mono">Industries</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           AI that fits the way your industry works.
         </h2>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <figure className="mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-border">
+          <img
+            src={legalIndustry}
+            alt="Legal team reviewing case documents in a modern office"
+            loading="lazy"
+            className="size-full object-cover"
+          />
+        </figure>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((i) => (
             <article
               key={i.name}
@@ -373,7 +419,7 @@ function Home() {
       </section>
 
       {/* HEM */}
-      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-16 sm:py-24">
+      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-14 sm:py-20">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="label-mono">HEM / Hyper Enabled Minds</p>
@@ -386,6 +432,14 @@ function Home() {
             </p>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
+            <figure className="mb-6 aspect-[16/9] overflow-hidden rounded-2xl">
+              <img
+                src={teamAbout}
+                alt="3ylabs team working together at a shared desk"
+                loading="lazy"
+                className="size-full object-cover"
+              />
+            </figure>
             <div
               aria-hidden
               className="absolute -right-16 -top-16 h-56 w-56 rounded-full"
@@ -425,24 +479,6 @@ function Home() {
         </div>
       </section>
 
-
-      {/* INSIGHTS */}
-      <section id="insights" className="container-page scroll-mt-20 py-16 sm:py-24">
-        <p className="label-mono">Insights</p>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Notes from the work.</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {insights.map((a) => (
-            <article
-              key={a.title}
-              className="surface-card flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
-            >
-              <p className="label-mono">{a.category}</p>
-              <h3 className="mt-3 font-display text-lg font-semibold leading-snug">{a.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <CTASection />
     </main>
