@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { HeroVisual } from "@/components/HeroVisual";
 import { PortalExplorer } from "@/components/PortalExplorer";
-import { SetuArchitecture } from "@/components/SetuArchitecture";
 import { CTASection } from "@/components/CTASection";
 
 export const Route = createFileRoute("/")({
@@ -132,7 +131,7 @@ function Home() {
     <main>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-[var(--gradient-tint)]">
-        <div className="container-page grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-2">
+        <div className="container-page grid items-center gap-12 py-9 sm:py-12 lg:grid-cols-2">
           <div className="animate-fade-up">
             <p className="label-mono">
               AI Transformation • AI-Native Products • Production
@@ -147,8 +146,12 @@ function Home() {
             <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-[var(--brand-deep)]">
               We advise. We build. We run our own products.
             </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              3ylabs is the studio, Setu Systems is the software platform we build and sell, and
+              AscendHSI is the client whose operations run on it every day.
+            </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}
@@ -172,8 +175,8 @@ function Home() {
       </section>
 
       {/* ADVISE BUILD RUN */}
-      <section className="container-page py-16 sm:py-20">
-        <div className="grid overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)] md:grid-cols-3">
+      <section className="container-page -mt-6 pb-9 sm:pb-12">
+        <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] md:grid-cols-3">
           {abr.map((c, i) => (
             <div
               key={c.key}
@@ -185,9 +188,9 @@ function Home() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--tint)] transition-colors group-hover:bg-background">
                   <c.icon className="h-5 w-5 text-[var(--brand)]" aria-hidden />
                 </span>
-                <h2 className="font-display text-lg font-bold uppercase tracking-wide text-primary">
+                <h3 className="font-display text-lg font-bold uppercase tracking-wide text-primary">
                   {c.key}
-                </h2>
+                </h3>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
             </div>
@@ -196,42 +199,42 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="container-page scroll-mt-20 py-16 sm:py-20">
+      <section id="services" className="container-page scroll-mt-20 py-9 sm:py-12">
         <p className="label-mono">Services</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           Where AI becomes operational.
         </h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <article
               key={s.title}
-              className="surface-card p-7 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              className="surface-card p-6 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--tint)]">
                 <s.icon className="h-5 w-5 text-[var(--brand)]" aria-hidden />
               </span>
-              <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
+              <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
             </article>
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-10 border-t border-border pt-8">
           <p className="label-mono">Extended services</p>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {extendedServices.map((s) => (
-              <article key={s.title} className="rounded-2xl border border-border bg-[var(--tint)] p-6">
-                <h3 className="font-display text-base font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </article>
+          <ul className="mt-4 divide-y divide-border">
+            {extendedServices.map((sv) => (
+              <li key={sv.title} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-6">
+                <span className="font-display text-sm font-semibold sm:w-72 sm:shrink-0">{sv.title}</span>
+                <span className="text-sm leading-relaxed text-muted-foreground">{sv.body}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
 
       {/* SETU */}
-      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-16 sm:py-24">
+      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-9 sm:py-12">
         <div className="container-page">
           <p className="label-mono">Setu Systems</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-bold sm:text-4xl">
@@ -249,12 +252,8 @@ function Home() {
           </p>
 
 
-          <div className="mt-12">
+          <div className="mt-10">
             <PortalExplorer />
-          </div>
-
-          <div className="mt-16">
-            <SetuArchitecture />
           </div>
 
           <div className="mt-10">
@@ -269,7 +268,7 @@ function Home() {
       </section>
 
       {/* ASCENDHSI PROOF STRIP */}
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-9 sm:py-12">
         <div className="surface-card grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <p className="label-mono">Proof in production · AscendHSI</p>
@@ -306,12 +305,12 @@ function Home() {
       </section>
 
       {/* APPROACH PREVIEW */}
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-9 sm:py-12">
         <p className="label-mono">Approach</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           One accountable team, from strategy through production.
         </h2>
-        <ol className="mt-10 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <ol className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {[
             ["01", "Discover", "Goals, workflows, data and AI opportunities."],
             ["02", "Design", "Experience, architecture and governance."],
@@ -332,48 +331,61 @@ function Home() {
         >
           Explore the full approach <ArrowRight className="h-4 w-4" aria-hidden />
         </Link>
+
+        <div className="mt-12 border-t border-border pt-10">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <p className="label-mono">Insights</p>
+            <Link
+              to="/insights"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--brand)] hover:underline"
+            >
+              All insights <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+          <ul className="mt-5 divide-y divide-border">
+            {insights.map((a) => (
+              <li key={a.title} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6">
+                <span className="label-mono sm:w-56 sm:shrink-0">{a.category}</span>
+                <span className="font-display text-base font-semibold">{a.title}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
 
 
       {/* INDUSTRIES */}
-      <section id="industries" className="container-page scroll-mt-20 py-16 sm:py-24">
+      <section id="industries" className="container-page scroll-mt-20 py-9 sm:py-12">
         <p className="label-mono">Industries</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           AI that fits the way your industry works.
         </h2>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 flex flex-wrap gap-3">
           {industries.map((i) => (
-            <article
+            <span
               key={i.name}
-              className={`rounded-2xl border p-6 transition-all hover:-translate-y-1 ${
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium ${
                 i.featured
-                  ? "border-transparent text-primary-foreground shadow-[var(--shadow-lift)]"
-                  : "border-border bg-card shadow-[var(--shadow-soft)]"
+                  ? "border-transparent text-primary-foreground shadow-[var(--shadow-soft)]"
+                  : "border-border bg-card text-primary"
               }`}
               style={i.featured ? { background: "var(--gradient-brand)" } : undefined}
             >
-              <i.icon
-                className={`h-5 w-5 ${i.featured ? "text-primary-foreground" : "text-[var(--brand)]"}`}
-                aria-hidden
-              />
-              <h3
-                className={`mt-4 font-display text-lg font-semibold ${i.featured ? "text-primary-foreground" : ""}`}
-              >
-                {i.name}
-              </h3>
+              <i.icon className="h-4 w-4" aria-hidden />
+              {i.name}
               {i.featured && (
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-primary-foreground/80">
-                  Deepest domain focus
-                </p>
+                <span className="font-mono text-[9px] uppercase tracking-widest opacity-80">
+                  Deepest focus
+                </span>
               )}
-            </article>
+            </span>
           ))}
         </div>
       </section>
 
       {/* HEM */}
-      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-16 sm:py-24">
+      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-9 sm:py-12">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="label-mono">HEM / Hyper Enabled Minds</p>
@@ -385,7 +397,16 @@ function Home() {
               innovation and enable smarter decisions, not replace the people behind them.
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)]">
+            <div className="relative grid gap-3 sm:grid-cols-2">
+              {["Human judgment", "Machine speed", "Governed by design", "Measurable outcomes"].map(
+                (t) => (
+                  <div key={t} className="rounded-xl border border-border bg-background px-4 py-4">
+                    <p className="font-display text-sm font-semibold text-primary">{t}</p>
+                  </div>
+                ),
+              )}
+            </div>
             <div
               aria-hidden
               className="absolute -right-16 -top-16 h-56 w-56 rounded-full"
@@ -394,29 +415,20 @@ function Home() {
                   "radial-gradient(circle, color-mix(in oklab, var(--cyan) 35%, transparent), transparent 70%)",
               }}
             />
-            <div className="relative grid gap-3 sm:grid-cols-2">
-              {["Human judgment", "Machine speed", "Governed by design", "Measurable outcomes"].map(
-                (t) => (
-                  <div key={t} className="rounded-xl border border-border bg-background px-4 py-5">
-                    <p className="font-display text-sm font-semibold text-primary">{t}</p>
-                  </div>
-                ),
-              )}
-            </div>
           </div>
         </div>
 
-        <div className="container-page mt-14 grid gap-5 md:grid-cols-2">
-          <article className="surface-card p-7">
+        <div className="container-page mt-8 grid gap-5 md:grid-cols-2">
+          <article className="rounded-2xl border border-border bg-card p-6">
             <p className="label-mono">Vision</p>
-            <p className="mt-3 text-base leading-relaxed text-foreground">
+            <p className="mt-2 text-sm leading-relaxed text-foreground">
               To become the most trusted AI transformation partner, empowering organizations to
               build intelligent, secure and scalable digital enterprises.
             </p>
           </article>
-          <article className="surface-card p-7">
+          <article className="rounded-2xl border border-border bg-card p-6">
             <p className="label-mono">Mission</p>
-            <p className="mt-3 text-base leading-relaxed text-foreground">
+            <p className="mt-2 text-sm leading-relaxed text-foreground">
               To help organizations identify the right AI opportunities, engineer practical
               solutions, modernize their platforms and continuously innovate through intelligent
               automation, delivered by one accountable team from strategy through production.
@@ -425,24 +437,6 @@ function Home() {
         </div>
       </section>
 
-
-      {/* INSIGHTS */}
-      <section id="insights" className="container-page scroll-mt-20 py-16 sm:py-24">
-        <p className="label-mono">Insights</p>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Notes from the work.</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {insights.map((a) => (
-            <article
-              key={a.title}
-              className="surface-card flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
-            >
-              <p className="label-mono">{a.category}</p>
-              <h3 className="mt-3 font-display text-lg font-semibold leading-snug">{a.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <CTASection />
     </main>

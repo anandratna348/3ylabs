@@ -1,4 +1,5 @@
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { portals, type PortalId } from "@/data/setu";
 import { PortalMockup } from "./PortalMockup";
@@ -54,16 +55,28 @@ export function PortalExplorer() {
               </li>
             ))}
           </ul>
-          <button
-            type="button"
-            onClick={() => setDemo(portal.name)}
-            className="mt-7 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
-          >
-            Request a Demo
-          </button>
+          <div className="mt-7 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setDemo(portal.name)}
+              className="cursor-pointer rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+            >
+              Request a Demo
+            </button>
+            <Link
+              to="/products/setu-systems/$portal"
+              params={{ portal: portal.id }}
+              className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-[var(--brand)] hover:underline"
+            >
+              {portal.name} details
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
         </div>
 
-        <PortalMockup id={portal.id} />
+        <div className="max-h-[26rem] overflow-hidden rounded-2xl">
+          <PortalMockup id={portal.id} />
+        </div>
       </div>
 
       {demo && <DemoModal product={demo} onClose={() => setDemo(null)} />}

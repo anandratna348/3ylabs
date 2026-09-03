@@ -20,3 +20,12 @@
 - [ ] One-sentence explainer of 3ylabs / Setu Systems / AscendHSI
 - [ ] Results: metrics slots + 2 anonymised case studies (numbers to confirm with client)
 - [ ] Heading hierarchy: eyebrows are not headings
+
+## Status
+- [x] Dark theme + toggle
+- [x] sitemap.xml, robots Sitemap line, og.png
+- [x] Product imagery wired (home, results, portal pages)
+- [x] 6 portal detail pages with buyer + pricing signal
+- [x] Homepage tightened, brand relationship explained
+- [ ] Real client metrics: waiting on confirmed numbers (src/data/proof.ts)
+- [ ] Anonymised case studies: waiting on approval (src/data/proof.ts)
