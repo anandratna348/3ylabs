@@ -16,9 +16,7 @@ import {
 } from "lucide-react";
 import { HeroVisual } from "@/components/HeroVisual";
 import { PortalExplorer } from "@/components/PortalExplorer";
-import { SetuArchitecture } from "@/components/SetuArchitecture";
 import { CTASection } from "@/components/CTASection";
-import vantageUi from "@/assets/setu-vantage-ui.jpg";
 import teamAbout from "@/assets/team-about.jpg";
 
 export const Route = createFileRoute("/")({
@@ -178,8 +176,8 @@ function Home() {
       </section>
 
       {/* ADVISE BUILD RUN */}
-      <section className="container-page py-10 sm:py-14">
-        <div className="grid overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)] md:grid-cols-3">
+      <section className="container-page -mt-6 pb-10 sm:pb-14">
+        <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] md:grid-cols-3">
           {abr.map((c, i) => (
             <div
               key={c.key}
@@ -191,9 +189,9 @@ function Home() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--tint)] transition-colors group-hover:bg-background">
                   <c.icon className="h-5 w-5 text-[var(--brand)]" aria-hidden />
                 </span>
-                <h2 className="font-display text-lg font-bold uppercase tracking-wide text-primary">
+                <h3 className="font-display text-lg font-bold uppercase tracking-wide text-primary">
                   {c.key}
-                </h2>
+                </h3>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
             </div>
@@ -222,16 +220,16 @@ function Home() {
           ))}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 border-t border-border pt-8">
           <p className="label-mono">Extended services</p>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {extendedServices.map((s) => (
-              <article key={s.title} className="rounded-2xl border border-border bg-[var(--tint)] p-6">
-                <h3 className="font-display text-base font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </article>
+          <ul className="mt-4 divide-y divide-border">
+            {extendedServices.map((sv) => (
+              <li key={sv.title} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-6">
+                <span className="font-display text-sm font-semibold sm:w-72 sm:shrink-0">{sv.title}</span>
+                <span className="text-sm leading-relaxed text-muted-foreground">{sv.body}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -255,21 +253,8 @@ function Home() {
           </p>
 
 
-          <figure className="mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-lift)]">
-            <img
-              src={vantageUi}
-              alt="Setu Vantage case workspace showing a case list, statuses and an activity timeline"
-              loading="lazy"
-              className="size-full object-cover object-top"
-            />
-          </figure>
-
           <div className="mt-10">
             <PortalExplorer />
-          </div>
-
-          <div className="mt-12">
-            <SetuArchitecture />
           </div>
 
           <div className="mt-10">
@@ -377,32 +362,25 @@ function Home() {
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           AI that fits the way your industry works.
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 flex flex-wrap gap-3">
           {industries.map((i) => (
-            <article
+            <span
               key={i.name}
-              className={`rounded-2xl border p-6 transition-all hover:-translate-y-1 ${
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium ${
                 i.featured
-                  ? "border-transparent text-primary-foreground shadow-[var(--shadow-lift)]"
-                  : "border-border bg-card shadow-[var(--shadow-soft)]"
+                  ? "border-transparent text-primary-foreground shadow-[var(--shadow-soft)]"
+                  : "border-border bg-card text-primary"
               }`}
               style={i.featured ? { background: "var(--gradient-brand)" } : undefined}
             >
-              <i.icon
-                className={`h-5 w-5 ${i.featured ? "text-primary-foreground" : "text-[var(--brand)]"}`}
-                aria-hidden
-              />
-              <h3
-                className={`mt-4 font-display text-lg font-semibold ${i.featured ? "text-primary-foreground" : ""}`}
-              >
-                {i.name}
-              </h3>
+              <i.icon className="h-4 w-4" aria-hidden />
+              {i.name}
               {i.featured && (
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-primary-foreground/80">
-                  Deepest domain focus
-                </p>
+                <span className="font-mono text-[9px] uppercase tracking-widest opacity-80">
+                  Deepest focus
+                </span>
               )}
-            </article>
+            </span>
           ))}
         </div>
       </section>
