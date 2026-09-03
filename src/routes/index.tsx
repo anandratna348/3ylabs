@@ -19,7 +19,6 @@ import { PortalExplorer } from "@/components/PortalExplorer";
 import { SetuArchitecture } from "@/components/SetuArchitecture";
 import { CTASection } from "@/components/CTASection";
 import vantageUi from "@/assets/setu-vantage-ui.jpg";
-import legalIndustry from "@/assets/legal-industry.jpg";
 import teamAbout from "@/assets/team-about.jpg";
 
 export const Route = createFileRoute("/")({
@@ -135,7 +134,7 @@ function Home() {
     <main>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-[var(--gradient-tint)]">
-        <div className="container-page grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-2">
+        <div className="container-page grid items-center gap-12 py-10 sm:py-14 lg:grid-cols-2">
           <div className="animate-fade-up">
             <p className="label-mono">
               AI Transformation • AI-Native Products • Production
@@ -179,7 +178,7 @@ function Home() {
       </section>
 
       {/* ADVISE BUILD RUN */}
-      <section className="container-page py-12 sm:py-16">
+      <section className="container-page py-10 sm:py-14">
         <div className="grid overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)] md:grid-cols-3">
           {abr.map((c, i) => (
             <div
@@ -203,12 +202,12 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="container-page scroll-mt-20 py-12 sm:py-16">
+      <section id="services" className="container-page scroll-mt-20 py-10 sm:py-14">
         <p className="label-mono">Services</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           Where AI becomes operational.
         </h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
           {services.map((s) => (
             <article
               key={s.title}
@@ -223,7 +222,7 @@ function Home() {
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-10">
           <p className="label-mono">Extended services</p>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {extendedServices.map((s) => (
@@ -238,7 +237,7 @@ function Home() {
 
 
       {/* SETU */}
-      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-14 sm:py-20">
+      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-10 sm:py-14">
         <div className="container-page">
           <p className="label-mono">Setu Systems</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-bold sm:text-4xl">
@@ -256,22 +255,20 @@ function Home() {
           </p>
 
 
-          <figure className="mt-10 overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-lift)]">
+          <figure className="mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-lift)]">
             <img
               src={vantageUi}
               alt="Setu Vantage case workspace showing a case list, statuses and an activity timeline"
-              width={1600}
-              height={1008}
               loading="lazy"
-              className="block w-full"
+              className="size-full object-cover object-top"
             />
           </figure>
 
-          <div className="mt-12">
+          <div className="mt-10">
             <PortalExplorer />
           </div>
 
-          <div className="mt-16">
+          <div className="mt-12">
             <SetuArchitecture />
           </div>
 
@@ -287,7 +284,7 @@ function Home() {
       </section>
 
       {/* ASCENDHSI PROOF STRIP */}
-      <section className="container-page py-12 sm:py-16">
+      <section className="container-page py-10 sm:py-14">
         <div className="surface-card grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <p className="label-mono">Proof in production · AscendHSI</p>
@@ -324,12 +321,12 @@ function Home() {
       </section>
 
       {/* APPROACH PREVIEW */}
-      <section className="container-page py-12 sm:py-16">
+      <section className="container-page py-10 sm:py-14">
         <p className="label-mono">Approach</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           One accountable team, from strategy through production.
         </h2>
-        <ol className="mt-10 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <ol className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {[
             ["01", "Discover", "Goals, workflows, data and AI opportunities."],
             ["02", "Design", "Experience, architecture and governance."],
@@ -351,7 +348,7 @@ function Home() {
           Explore the full approach <ArrowRight className="h-4 w-4" aria-hidden />
         </Link>
 
-        <div className="mt-14 border-t border-border pt-10">
+        <div className="mt-12 border-t border-border pt-10">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <p className="label-mono">Insights</p>
             <Link
@@ -375,19 +372,11 @@ function Home() {
 
 
       {/* INDUSTRIES */}
-      <section id="industries" className="container-page scroll-mt-20 py-14 sm:py-20">
+      <section id="industries" className="container-page scroll-mt-20 py-10 sm:py-14">
         <p className="label-mono">Industries</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           AI that fits the way your industry works.
         </h2>
-        <figure className="mt-8 aspect-[21/9] overflow-hidden rounded-2xl border border-border">
-          <img
-            src={legalIndustry}
-            alt="Legal team reviewing case documents in a modern office"
-            loading="lazy"
-            className="size-full object-cover"
-          />
-        </figure>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((i) => (
             <article
@@ -419,7 +408,7 @@ function Home() {
       </section>
 
       {/* HEM */}
-      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-14 sm:py-20">
+      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-10 sm:py-14">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="label-mono">HEM / Hyper Enabled Minds</p>
@@ -432,7 +421,7 @@ function Home() {
             </p>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
-            <figure className="mb-6 aspect-[16/9] overflow-hidden rounded-2xl">
+            <figure className="aspect-[16/9] overflow-hidden rounded-2xl">
               <img
                 src={teamAbout}
                 alt="3ylabs team working together at a shared desk"
@@ -448,19 +437,10 @@ function Home() {
                   "radial-gradient(circle, color-mix(in oklab, var(--cyan) 35%, transparent), transparent 70%)",
               }}
             />
-            <div className="relative grid gap-3 sm:grid-cols-2">
-              {["Human judgment", "Machine speed", "Governed by design", "Measurable outcomes"].map(
-                (t) => (
-                  <div key={t} className="rounded-xl border border-border bg-background px-4 py-5">
-                    <p className="font-display text-sm font-semibold text-primary">{t}</p>
-                  </div>
-                ),
-              )}
-            </div>
           </div>
         </div>
 
-        <div className="container-page mt-14 grid gap-5 md:grid-cols-2">
+        <div className="container-page mt-8 grid gap-5 md:grid-cols-2">
           <article className="surface-card p-7">
             <p className="label-mono">Vision</p>
             <p className="mt-3 text-base leading-relaxed text-foreground">
