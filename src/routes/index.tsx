@@ -17,7 +17,6 @@ import {
 import { HeroVisual } from "@/components/HeroVisual";
 import { PortalExplorer } from "@/components/PortalExplorer";
 import { CTASection } from "@/components/CTASection";
-import teamAbout from "@/assets/team-about.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -398,15 +397,16 @@ function Home() {
               innovation and enable smarter decisions, not replace the people behind them.
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
-            <figure className="aspect-[16/9] overflow-hidden rounded-2xl">
-              <img
-                src={teamAbout}
-                alt="3ylabs team working together at a shared desk"
-                loading="lazy"
-                className="size-full object-cover"
-              />
-            </figure>
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-[var(--shadow-soft)]">
+            <div className="relative grid gap-3 sm:grid-cols-2">
+              {["Human judgment", "Machine speed", "Governed by design", "Measurable outcomes"].map(
+                (t) => (
+                  <div key={t} className="rounded-xl border border-border bg-background px-4 py-4">
+                    <p className="font-display text-sm font-semibold text-primary">{t}</p>
+                  </div>
+                ),
+              )}
+            </div>
             <div
               aria-hidden
               className="absolute -right-16 -top-16 h-56 w-56 rounded-full"
