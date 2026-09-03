@@ -132,7 +132,7 @@ function Home() {
     <main>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-[var(--gradient-tint)]">
-        <div className="container-page grid items-center gap-12 py-10 sm:py-14 lg:grid-cols-2">
+        <div className="container-page grid items-center gap-12 py-9 sm:py-12 lg:grid-cols-2">
           <div className="animate-fade-up">
             <p className="label-mono">
               AI Transformation • AI-Native Products • Production
@@ -176,7 +176,7 @@ function Home() {
       </section>
 
       {/* ADVISE BUILD RUN */}
-      <section className="container-page -mt-6 pb-10 sm:pb-14">
+      <section className="container-page -mt-6 pb-9 sm:pb-12">
         <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-soft)] md:grid-cols-3">
           {abr.map((c, i) => (
             <div
@@ -200,21 +200,21 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="container-page scroll-mt-20 py-10 sm:py-14">
+      <section id="services" className="container-page scroll-mt-20 py-9 sm:py-12">
         <p className="label-mono">Services</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           Where AI becomes operational.
         </h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <article
               key={s.title}
-              className="surface-card p-7 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              className="surface-card p-6 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--tint)]">
                 <s.icon className="h-5 w-5 text-[var(--brand)]" aria-hidden />
               </span>
-              <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
+              <h3 className="mt-4 font-display text-lg font-semibold">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
             </article>
           ))}
@@ -235,7 +235,7 @@ function Home() {
 
 
       {/* SETU */}
-      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-10 sm:py-14">
+      <section id="products" className="scroll-mt-20 bg-[var(--tint)] py-9 sm:py-12">
         <div className="container-page">
           <p className="label-mono">Setu Systems</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-bold sm:text-4xl">
@@ -269,7 +269,7 @@ function Home() {
       </section>
 
       {/* ASCENDHSI PROOF STRIP */}
-      <section className="container-page py-10 sm:py-14">
+      <section className="container-page py-9 sm:py-12">
         <div className="surface-card grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <p className="label-mono">Proof in production · AscendHSI</p>
@@ -306,7 +306,7 @@ function Home() {
       </section>
 
       {/* APPROACH PREVIEW */}
-      <section className="container-page py-10 sm:py-14">
+      <section className="container-page py-9 sm:py-12">
         <p className="label-mono">Approach</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           One accountable team, from strategy through production.
@@ -357,7 +357,7 @@ function Home() {
 
 
       {/* INDUSTRIES */}
-      <section id="industries" className="container-page scroll-mt-20 py-10 sm:py-14">
+      <section id="industries" className="container-page scroll-mt-20 py-9 sm:py-12">
         <p className="label-mono">Industries</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
           AI that fits the way your industry works.
@@ -386,7 +386,7 @@ function Home() {
       </section>
 
       {/* HEM */}
-      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-10 sm:py-14">
+      <section id="about" className="scroll-mt-20 border-y border-border bg-[var(--tint)] py-9 sm:py-12">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="label-mono">HEM / Hyper Enabled Minds</p>
@@ -419,16 +419,16 @@ function Home() {
         </div>
 
         <div className="container-page mt-8 grid gap-5 md:grid-cols-2">
-          <article className="surface-card p-7">
+          <article className="rounded-2xl border border-border bg-card p-6">
             <p className="label-mono">Vision</p>
-            <p className="mt-3 text-base leading-relaxed text-foreground">
+            <p className="mt-2 text-sm leading-relaxed text-foreground">
               To become the most trusted AI transformation partner, empowering organizations to
               build intelligent, secure and scalable digital enterprises.
             </p>
           </article>
-          <article className="surface-card p-7">
+          <article className="rounded-2xl border border-border bg-card p-6">
             <p className="label-mono">Mission</p>
-            <p className="mt-3 text-base leading-relaxed text-foreground">
+            <p className="mt-2 text-sm leading-relaxed text-foreground">
               To help organizations identify the right AI opportunities, engineer practical
               solutions, modernize their platforms and continuously innovate through intelligent
               automation, delivered by one accountable team from strategy through production.
