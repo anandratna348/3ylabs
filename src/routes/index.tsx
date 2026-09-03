@@ -151,7 +151,7 @@ function Home() {
               AscendHSI is the client whose operations run on it every day.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}

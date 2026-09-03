@@ -74,7 +74,9 @@ export function PortalExplorer() {
           </div>
         </div>
 
-        <PortalMockup id={portal.id} />
+        <div className="max-h-[26rem] overflow-hidden rounded-2xl">
+          <PortalMockup id={portal.id} />
+        </div>
       </div>
 
       {demo && <DemoModal product={demo} onClose={() => setDemo(null)} />}
