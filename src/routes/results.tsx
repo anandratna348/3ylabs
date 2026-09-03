@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Database, GitBranch, Rocket } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
+import { proofMetrics, anonymisedCases } from "@/data/proof";
+import vantageUi from "@/assets/setu-vantage-ui.jpg";
 
 export const Route = createFileRoute("/results")({
   head: () => ({
@@ -61,7 +63,33 @@ function ResultsPage() {
         </div>
       </section>
 
-      <section className="container-page py-16 sm:py-20">
+      {proofMetrics.length > 0 && (
+        <section className="border-b border-border bg-[var(--tint)] py-10">
+          <div className="container-page grid gap-6 sm:grid-cols-3">
+            {proofMetrics.map((m) => (
+              <div key={m.label}>
+                <p className="font-display text-3xl font-bold text-[var(--brand)] sm:text-4xl">
+                  {m.value}
+                </p>
+                <p className="mt-2 text-sm font-medium text-foreground">{m.label}</p>
+                {m.note && <p className="mt-1 text-xs text-muted-foreground">{m.note}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="container-page py-12 sm:py-16">
+        <figure className="mb-10 overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-lift)]">
+          <img
+            src={vantageUi}
+            alt="The Setu case workspace AscendHSI uses daily, showing matters, statuses and activity"
+            width={1600}
+            height={1008}
+            loading="lazy"
+            className="block w-full"
+          />
+        </figure>
         <div className="surface-card p-6 sm:p-10">
           <p className="label-mono">Featured client</p>
           <h2 className="mt-3 text-3xl font-bold">AscendHSI</h2>
@@ -106,6 +134,21 @@ function ResultsPage() {
           ))}
         </div>
       </section>
+
+      {anonymisedCases.length > 0 && (
+        <section className="container-page pb-12 sm:pb-16">
+          <h2 className="text-2xl font-bold sm:text-3xl">More engagements</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            {anonymisedCases.map((c) => (
+              <article key={c.sector} className="surface-card p-6">
+                <p className="label-mono">{c.sector}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.challenge}</p>
+                <p className="mt-3 text-sm font-medium text-foreground">{c.outcome}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <CTASection />
     </main>
