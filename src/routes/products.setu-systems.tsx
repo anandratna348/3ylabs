@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useState } from "react";
-import { portals } from "@/data/setu";
+import { portals, portalDetails } from "@/data/setu";
 import { PortalExplorer } from "@/components/PortalExplorer";
 import { SetuArchitecture } from "@/components/SetuArchitecture";
 import { DemoModal } from "@/components/DemoModal";
@@ -63,6 +63,10 @@ function SetuPage() {
 
       <section className="container-page py-16 sm:py-20">
         <h2 className="text-3xl font-bold">Six portals. One platform.</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          Most firms start with Setu Vantage, then add Tickets and Finance. You do not have to buy
+          the platform to start.
+        </p>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {portals.map((p) => (
             <article
@@ -70,17 +74,35 @@ function SetuPage() {
               id={p.id}
               className="surface-card flex scroll-mt-24 flex-col p-6 transition-shadow hover:shadow-[var(--shadow-lift)]"
             >
-              <p className="label-mono">{p.label}</p>
+              <div className="flex items-start justify-between gap-3">
+                <p className="label-mono">{p.label}</p>
+                {portalDetails[p.id].recommended && (
+                  <span className="shrink-0 rounded-full bg-[var(--tint)] px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-[var(--brand-deep)]">
+                    Start here
+                  </span>
+                )}
+              </div>
               <h3 className="mt-3 font-display text-xl font-semibold">{p.name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{p.short}</p>
-              <p className="mt-4 text-sm font-medium text-[var(--brand-deep)]">✓ {p.benefits[0]}</p>
-              <button
-                type="button"
-                onClick={() => setDemo(p.name)}
-                className="mt-6 w-full rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
-              >
-                Request a Demo
-              </button>
+              <p className="mt-4 text-sm font-medium text-[var(--brand-deep)]">
+                For: {portalDetails[p.id].buyer}
+              </p>
+              <div className="mt-6 flex flex-col gap-2">
+                <Link
+                  to="/products/setu-systems/$portal"
+                  params={{ portal: p.id }}
+                  className="cursor-pointer rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+                >
+                  See {p.name}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setDemo(p.name)}
+                  className="w-full cursor-pointer rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
+                >
+                  Request a Demo
+                </button>
+              </div>
             </article>
           ))}
         </div>
