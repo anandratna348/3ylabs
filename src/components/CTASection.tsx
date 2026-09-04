@@ -6,13 +6,8 @@ export function CTASection() {
     <section className="container-page py-20">
       <div
         className="relative overflow-hidden rounded-3xl px-6 py-16 text-center sm:px-12"
-        style={{ background: "var(--gradient-brand)" }}
+        style={{ background: "var(--brand-deep)" }}
       >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.22), transparent 70%)" }}
-        />
         <h2 className="mx-auto max-w-2xl text-3xl font-bold text-primary-foreground sm:text-4xl">
           Ready to move from AI curiosity to AI capability?
         </h2>
