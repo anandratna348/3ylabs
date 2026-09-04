@@ -11,14 +11,6 @@ const nodes = [
 export function HeroVisual() {
   return (
     <div className="relative w-full">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem]"
-        style={{
-          background:
-            "radial-gradient(60% 60% at 70% 30%, color-mix(in oklab, var(--cyan) 22%, transparent), transparent 70%)",
-        }}
-      />
       <div className="surface-card p-5 sm:p-7">
         <div
           className="relative overflow-hidden rounded-2xl px-5 py-6"

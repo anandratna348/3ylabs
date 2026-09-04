@@ -68,7 +68,7 @@ function ResultsPage() {
           <div className="container-page grid gap-6 sm:grid-cols-3">
             {proofMetrics.map((m) => (
               <div key={m.label}>
-                <p className="font-display text-3xl font-bold text-[var(--brand)] sm:text-4xl">
+                <p className="data-mono text-3xl font-semibold text-[var(--cyan)] sm:text-4xl">
                   {m.value}
                 </p>
                 <p className="mt-2 text-sm font-medium text-foreground">{m.label}</p>
