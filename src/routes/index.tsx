@@ -407,14 +407,6 @@ function Home() {
                 ),
               )}
             </div>
-            <div
-              aria-hidden
-              className="absolute -right-16 -top-16 h-56 w-56 rounded-full"
-              style={{
-                background:
-                  "radial-gradient(circle, color-mix(in oklab, var(--cyan) 35%, transparent), transparent 70%)",
-              }}
-            />
           </div>
         </div>
 
