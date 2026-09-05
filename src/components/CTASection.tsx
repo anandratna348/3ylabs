@@ -16,7 +16,8 @@ export function CTASection() {
         </p>
         <Link
           to="/contact"
-          className="group mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-[var(--brand)] shadow-[var(--shadow-lift)] transition-all hover:-translate-y-0.5 hover:bg-white/95"
+          className="group mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-lift)] transition-all hover:-translate-y-0.5"
+          style={{ background: "var(--gradient-accent)" }}
         >
           Book an AI Readiness Assessment
           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
