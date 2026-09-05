@@ -79,9 +79,9 @@
   --chart-4: oklch(0.78 0.13 72);
   --chart-5: oklch(0.52 0.09 264);
 
-  /* Solid surfaces only: no gradient hero, no gradient buttons */
+  /* Navy-to-copper accent gradient for primary CTAs */
   --gradient-brand: var(--brand-deep);
-  --gradient-accent: var(--brand);
+  --gradient-accent: linear-gradient(90deg, var(--brand) 0%, var(--brand-deep) 72%, var(--cyan) 100%);
   --gradient-tint: linear-gradient(180deg, oklch(1 0 0) 0%, var(--tint) 100%);
   --shadow-soft: 0 1px 2px oklch(0.19 0.004 265 / 0.05), 0 8px 24px -12px oklch(0.245 0.072 265 / 0.18);
   --shadow-lift: 0 2px 4px oklch(0.19 0.004 265 / 0.05), 0 24px 48px -20px oklch(0.245 0.072 265 / 0.24);
