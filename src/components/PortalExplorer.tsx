@@ -48,7 +48,7 @@ export function PortalExplorer() {
           <ul className="mt-6 space-y-3">
             {portal.benefits.map((b) => (
               <li key={b} className="flex items-start gap-3 text-sm text-foreground">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklab,var(--cyan)_20%,white)]">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_oklab,var(--cyan)_20%,var(--card))]">
                   <Check className="h-3 w-3 text-[var(--brand-deep)]" aria-hidden />
                 </span>
                 {b}
