@@ -61,7 +61,7 @@ function Row({ cells, badge }: { cells: string[]; badge?: { text: string; tone: 
   );
 }
 
-const ok = "bg-[color-mix(in_oklab,var(--cyan)_16%,white)] text-[var(--brand-deep)]";
+const ok = "bg-[color-mix(in_oklab,var(--cyan)_16%,var(--card))] text-[var(--brand-deep)]";
 const warn = "bg-secondary text-muted-foreground";
 
 export function PortalMockup({ id }: { id: PortalId }) {

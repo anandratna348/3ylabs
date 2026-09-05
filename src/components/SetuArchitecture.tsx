@@ -26,7 +26,7 @@ export function SetuArchitecture() {
       </ul>
       <div aria-hidden className="mx-auto h-8 w-px bg-border" />
       <div className="text-center">
-        <span className="inline-flex rounded-xl border border-[var(--cyan)] bg-[color-mix(in_oklab,var(--cyan)_10%,white)] px-5 py-3 font-mono text-xs uppercase tracking-widest text-[var(--brand-deep)]">
+        <span className="inline-flex rounded-xl border border-[var(--cyan)] bg-[color-mix(in_oklab,var(--cyan)_10%,var(--card))] px-5 py-3 font-mono text-xs uppercase tracking-widest text-[var(--brand-deep)]">
           AI Assistant
         </span>
       </div>
