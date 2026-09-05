@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 type Mode = "light" | "dark" | "system";
 
 const modes: { id: Mode; label: string; icon: typeof Sun }[] = [
-  { id: "light", label: "Light", icon: Sun },
-  { id: "dark", label: "Dark", icon: Moon },
+  { id: "light", label: "Daylight", icon: Sun },
+  { id: "dark", label: "Lab", icon: Moon },
   { id: "system", label: "System", icon: Monitor },
 ];
 
