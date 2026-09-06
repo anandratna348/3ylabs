@@ -21,6 +21,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProductsSetuSystemsRouteImport } from './routes/products.setu-systems'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as ShotlabPortalRouteImport } from './routes/shotlab.$portal'
 import { Route as ProductsSetuSystemsPortalRouteImport } from './routes/products.setu-systems.$portal'
 
 const IndexRoute = IndexRouteImport.update({
@@ -83,6 +84,11 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShotlabPortalRoute = ShotlabPortalRouteImport.update({
+  id: '/shotlab/$portal',
+  path: '/shotlab/$portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductsSetuSystemsPortalRoute =
   ProductsSetuSystemsPortalRouteImport.update({
     id: '/$portal',
@@ -102,6 +108,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/setu-systems': typeof ProductsSetuSystemsRouteWithChildren
   '/services/$slug': typeof ServicesSlugRoute
+  '/shotlab/$portal': typeof ShotlabPortalRoute
   '/services/': typeof ServicesIndexRoute
   '/products/setu-systems/$portal': typeof ProductsSetuSystemsPortalRoute
 }
@@ -117,6 +124,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/setu-systems': typeof ProductsSetuSystemsRouteWithChildren
   '/services/$slug': typeof ServicesSlugRoute
+  '/shotlab/$portal': typeof ShotlabPortalRoute
   '/services': typeof ServicesIndexRoute
   '/products/setu-systems/$portal': typeof ProductsSetuSystemsPortalRoute
 }
@@ -133,6 +141,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/products/setu-systems': typeof ProductsSetuSystemsRouteWithChildren
   '/services/$slug': typeof ServicesSlugRoute
+  '/shotlab/$portal': typeof ShotlabPortalRoute
   '/services/': typeof ServicesIndexRoute
   '/products/setu-systems/$portal': typeof ProductsSetuSystemsPortalRoute
 }
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/products/setu-systems'
     | '/services/$slug'
+    | '/shotlab/$portal'
     | '/services/'
     | '/products/setu-systems/$portal'
   fileRoutesByTo: FileRoutesByTo
@@ -165,6 +175,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/products/setu-systems'
     | '/services/$slug'
+    | '/shotlab/$portal'
     | '/services'
     | '/products/setu-systems/$portal'
   id:
@@ -180,6 +191,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/products/setu-systems'
     | '/services/$slug'
+    | '/shotlab/$portal'
     | '/services/'
     | '/products/setu-systems/$portal'
   fileRoutesById: FileRoutesById
@@ -196,6 +208,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ProductsSetuSystemsRoute: typeof ProductsSetuSystemsRouteWithChildren
   ServicesSlugRoute: typeof ServicesSlugRoute
+  ShotlabPortalRoute: typeof ShotlabPortalRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -285,6 +298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shotlab/$portal': {
+      id: '/shotlab/$portal'
+      path: '/shotlab/$portal'
+      fullPath: '/shotlab/$portal'
+      preLoaderRoute: typeof ShotlabPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/products/setu-systems/$portal': {
       id: '/products/setu-systems/$portal'
       path: '/$portal'
@@ -318,6 +338,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ProductsSetuSystemsRoute: ProductsSetuSystemsRouteWithChildren,
   ServicesSlugRoute: ServicesSlugRoute,
+  ShotlabPortalRoute: ShotlabPortalRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
