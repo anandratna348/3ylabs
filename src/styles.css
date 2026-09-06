@@ -45,6 +45,7 @@
   --color-ok: var(--ok);
   --color-warn: var(--warn);
   --color-crit: var(--crit);
+  --color-on-gradient: var(--on-gradient);
 }
 
 /* ---------------------------------------------------------------
@@ -93,6 +94,7 @@
   --warn: oklch(0.52 0.12 75);
   --crit: oklch(0.5 0.19 27);
 
+  --on-gradient: oklch(1 0 0);
   --gradient-brand: var(--brand-deep);
   --gradient-accent: linear-gradient(90deg, var(--brand) 0%, var(--brand-deep) 72%, var(--cyan) 100%);
   --gradient-tint: linear-gradient(180deg, oklch(1 0 0) 0%, var(--tint) 100%);
@@ -138,7 +140,9 @@
     --warn: oklch(0.82 0.13 85);
     --crit: oklch(0.7 0.17 25);
 
-    --gradient-brand: oklch(0.18 0.02 265);
+    --on-gradient: oklch(1 0 0);
+    --on-gradient: oklch(1 0 0);
+  --gradient-brand: oklch(0.18 0.02 265);
     --gradient-accent: linear-gradient(90deg, oklch(0.24 0.03 265) 0%, oklch(0.4 0.09 240) 68%, oklch(0.7 0.155 288) 100%);
     --gradient-tint: linear-gradient(180deg, oklch(0.13 0.014 265) 0%, oklch(0.17 0.016 265) 100%);
     --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.45), 0 8px 24px -12px oklch(0 0 0 / 0.6);
@@ -184,6 +188,7 @@
   --warn: oklch(0.82 0.13 85);
   --crit: oklch(0.7 0.17 25);
 
+  --on-gradient: oklch(1 0 0);
   --gradient-brand: oklch(0.18 0.02 265);
   --gradient-accent: linear-gradient(90deg, oklch(0.24 0.03 265) 0%, oklch(0.4 0.09 240) 68%, oklch(0.7 0.155 288) 100%);
   --gradient-tint: linear-gradient(180deg, oklch(0.13 0.014 265) 0%, oklch(0.17 0.016 265) 100%);

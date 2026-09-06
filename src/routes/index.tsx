@@ -155,7 +155,7 @@ function Home() {
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}
-                className="group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:brightness-105"
+                className="group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-on-gradient shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:brightness-105"
               >
                 Book an AI Readiness Assessment
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
