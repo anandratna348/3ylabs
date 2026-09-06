@@ -10,7 +10,7 @@ function systemTheme(): Theme {
 
 export function applyTheme(theme: Theme) {
   const root = document.documentElement;
-  root.dataset.theme = theme;
+  root.setAttribute("data-theme", theme);
   root.classList.toggle("dark", theme === "lab");
 }
 
