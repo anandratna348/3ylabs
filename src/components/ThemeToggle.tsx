@@ -1,42 +1,46 @@
-import { Monitor, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-type Mode = "light" | "dark" | "system";
+type Theme = "daylight" | "lab";
 
-const modes: { id: Mode; label: string; icon: typeof Sun }[] = [
-  { id: "light", label: "Daylight", icon: Sun },
-  { id: "dark", label: "Lab", icon: Moon },
-  { id: "system", label: "System", icon: Monitor },
-];
+const STORAGE_KEY = "3y-theme";
 
-export function applyTheme(mode: Mode) {
-  const dark =
-    mode === "dark" ||
-    (mode === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-  document.documentElement.classList.toggle("dark", dark);
-  document.documentElement.style.colorScheme = dark ? "dark" : "light";
+function systemTheme(): Theme {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "lab" : "daylight";
+}
+
+export function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  root.dataset.theme = theme;
+  root.classList.toggle("dark", theme === "lab");
 }
 
 export function ThemeToggle({ compact = false }: { compact?: boolean }) {
-  const [mode, setMode] = useState<Mode>("system");
+  const [theme, setTheme] = useState<Theme>("daylight");
   const [ready, setReady] = useState(false);
+  const [announcement, setAnnouncement] = useState("");
 
   useEffect(() => {
-    const stored = (localStorage.getItem("theme") as Mode | null) ?? "system";
-    setMode(stored);
+    const stored = localStorage.getItem(STORAGE_KEY);
+    const explicit = stored === "lab" || stored === "daylight" ? (stored as Theme) : null;
+    setTheme(explicit ?? systemTheme());
     setReady(true);
+
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     const onChange = () => {
-      if ((localStorage.getItem("theme") as Mode | null) ?? "system") applyTheme(stored);
+      if (localStorage.getItem(STORAGE_KEY)) return;
+      const next = systemTheme();
+      setTheme(next);
+      applyTheme(next);
     };
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const select = (next: Mode) => {
-    setMode(next);
-    localStorage.setItem("theme", next);
+  const select = (next: Theme) => {
+    setTheme(next);
+    localStorage.setItem(STORAGE_KEY, next);
     applyTheme(next);
+    setAnnouncement(next === "lab" ? "Lab theme on." : "Daylight theme on.");
   };
 
   return (
@@ -44,29 +48,32 @@ export function ThemeToggle({ compact = false }: { compact?: boolean }) {
       role="group"
       aria-label="Colour theme"
       className={`inline-flex items-center gap-0.5 rounded-lg border border-border bg-background p-0.5 ${
-        compact ? "" : "shadow-[var(--shadow-soft)]"
+        compact ? "" : "w-full"
       }`}
     >
-      {modes.map((m) => {
-        const active = ready && mode === m.id;
+      {(["daylight", "lab"] as Theme[]).map((id) => {
+        const active = ready && theme === id;
         return (
           <button
-            key={m.id}
+            key={id}
             type="button"
-            onClick={() => select(m.id)}
+            onClick={() => select(id)}
             aria-pressed={active}
-            aria-label={`${m.label} theme`}
-            title={`${m.label} theme`}
-            className={`inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-md transition-colors ${
+            className={`inline-flex cursor-pointer items-center justify-center rounded-md px-2.5 py-1.5 font-medium transition-colors ${
+              compact ? "text-xs" : "flex-1 text-sm"
+            } ${
               active
                 ? "bg-secondary text-primary"
                 : "text-muted-foreground hover:bg-secondary hover:text-primary"
             }`}
           >
-            <m.icon className="h-4 w-4" aria-hidden />
+            {id === "daylight" ? "Daylight" : "Lab"}
           </button>
         );
       })}
+      <span className="sr-only" aria-live="polite">
+        {announcement}
+      </span>
     </div>
   );
 }
