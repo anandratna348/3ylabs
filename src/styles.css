@@ -200,6 +200,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    color-scheme: light dark;
+  }
+
+  :root[data-theme="daylight"] {
+    color-scheme: light;
+  }
+
+  :root[data-theme="lab"] {
+    color-scheme: dark;
   }
 
   body {
@@ -208,7 +217,15 @@
     font-family: var(--font-sans);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 240ms ease, color 240ms ease;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    body {
+      transition: none;
+    }
+  }
+
 
   h1,
   h2,
