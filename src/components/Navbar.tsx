@@ -232,7 +232,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle compact />
         <button
           type="button"
           className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border text-primary lg:hidden"
@@ -303,6 +302,12 @@ export function Navbar() {
                 Book an AI Readiness Assessment
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
               </Link>
+            </li>
+            <li className="mt-3 border-t border-border pt-3">
+              <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Theme
+              </span>
+              <ThemeToggle />
             </li>
           </ul>
         </div>
