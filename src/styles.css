@@ -331,3 +331,30 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------
+   Theme-keyed product screenshots (IMG slots).
+   Two real captures; never a CSS-filtered light shot.
+   --------------------------------------------------------------- */
+.shot-lab {
+  display: none;
+}
+.shot-daylight {
+  display: block;
+}
+:root:not([data-theme="daylight"]) {
+  @media (prefers-color-scheme: dark) {
+    .shot-daylight {
+      display: none;
+    }
+    .shot-lab {
+      display: block;
+    }
+  }
+}
+:root[data-theme="lab"] .shot-daylight {
+  display: none;
+}
+:root[data-theme="lab"] .shot-lab {
+  display: block;
+}
