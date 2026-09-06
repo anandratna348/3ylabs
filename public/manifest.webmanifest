@@ -1,0 +1,14 @@
+{
+  "name": "3ylabs",
+  "short_name": "3ylabs",
+  "description": "3ylabs builds and runs production AI systems, including the Setu Systems portals.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFBFD",
+  "theme_color": "#12151E",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
