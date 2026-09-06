@@ -94,6 +94,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#FBFBFD", media: "(prefers-color-scheme: light)" },
+      { name: "theme-color", content: "#0B0F18", media: "(prefers-color-scheme: dark)" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -121,7 +123,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         <ScriptOnce>
-          {`(function(){try{var m=localStorage.getItem('theme')||'system';var d=m==='dark'||(m==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}})()`}
+          {`(function(){try{var t=localStorage.getItem('3y-theme');if(t!=='lab'&&t!=='daylight'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'lab':'daylight';}document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.toggle('dark',t==='lab');}catch(e){}})()`}
         </ScriptOnce>
         {children}
         <Scripts />

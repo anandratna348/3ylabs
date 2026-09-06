@@ -45,6 +45,7 @@
   --color-ok: var(--ok);
   --color-warn: var(--warn);
   --color-crit: var(--crit);
+  --color-on-gradient: var(--on-gradient);
 }
 
 /* ---------------------------------------------------------------
@@ -93,6 +94,7 @@
   --warn: oklch(0.52 0.12 75);
   --crit: oklch(0.5 0.19 27);
 
+  --on-gradient: oklch(1 0 0);
   --gradient-brand: var(--brand-deep);
   --gradient-accent: linear-gradient(90deg, var(--brand) 0%, var(--brand-deep) 72%, var(--cyan) 100%);
   --gradient-tint: linear-gradient(180deg, oklch(1 0 0) 0%, var(--tint) 100%);
@@ -138,6 +140,7 @@
     --warn: oklch(0.82 0.13 85);
     --crit: oklch(0.7 0.17 25);
 
+    --on-gradient: oklch(1 0 0);
     --gradient-brand: oklch(0.18 0.02 265);
     --gradient-accent: linear-gradient(90deg, oklch(0.24 0.03 265) 0%, oklch(0.4 0.09 240) 68%, oklch(0.7 0.155 288) 100%);
     --gradient-tint: linear-gradient(180deg, oklch(0.13 0.014 265) 0%, oklch(0.17 0.016 265) 100%);
@@ -184,6 +187,7 @@
   --warn: oklch(0.82 0.13 85);
   --crit: oklch(0.7 0.17 25);
 
+  --on-gradient: oklch(1 0 0);
   --gradient-brand: oklch(0.18 0.02 265);
   --gradient-accent: linear-gradient(90deg, oklch(0.24 0.03 265) 0%, oklch(0.4 0.09 240) 68%, oklch(0.7 0.155 288) 100%);
   --gradient-tint: linear-gradient(180deg, oklch(0.13 0.014 265) 0%, oklch(0.17 0.016 265) 100%);
@@ -200,6 +204,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    color-scheme: light dark;
+  }
+
+  :root[data-theme="daylight"] {
+    color-scheme: light;
+  }
+
+  :root[data-theme="lab"] {
+    color-scheme: dark;
   }
 
   body {
@@ -208,7 +221,15 @@
     font-family: var(--font-sans);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 240ms ease, color 240ms ease;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    body {
+      transition: none;
+    }
+  }
+
 
   h1,
   h2,

@@ -224,7 +224,7 @@ export function Navbar() {
           <Link
             to="/contact"
             style={{ background: "var(--gradient-accent)" }}
-            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] hover:brightness-105"
+            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-on-gradient shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] hover:brightness-105"
           >
             Book an Assessment
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />
@@ -232,7 +232,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle compact />
         <button
           type="button"
           className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-border text-primary lg:hidden"
@@ -298,11 +297,17 @@ export function Navbar() {
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}
-                className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-3 text-center text-sm font-semibold text-primary-foreground transition-all hover:brightness-105"
+                className="group flex cursor-pointer items-center justify-center gap-2 rounded-lg px-4 py-3 text-center text-sm font-semibold text-on-gradient transition-all hover:brightness-105"
               >
                 Book an AI Readiness Assessment
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
               </Link>
+            </li>
+            <li className="mt-3 border-t border-border pt-3">
+              <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Theme
+              </span>
+              <ThemeToggle />
             </li>
           </ul>
         </div>

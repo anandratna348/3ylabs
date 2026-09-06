@@ -81,7 +81,7 @@ function PortalDetailPage() {
               <Link
                 to="/contact"
                 style={{ background: "var(--gradient-accent)" }}
-                className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:brightness-105"
+                className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-on-gradient shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:brightness-105"
               >
                 Request a demo
                 <ArrowRight
